@@ -1,14 +1,14 @@
 {
-  "name": "cfp-backend",
+  "name": "tccprojetoucam",
   "version": "1.0.0",
-  "description": "Desafio final do Bootcamp DevFullStack do IGTI",
+  "description": "Portal Amigo do Pet",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules app.js"
   },
   "type": "module",
-  "author": "Felipe Marques",
+  "author": "Thadeu Guimaraes, Jhonata Martins e Charles Braga",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
