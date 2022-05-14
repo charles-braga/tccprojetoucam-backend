@@ -12,8 +12,8 @@ dotenv.config();
 
 const db = {};
 db.mongoose = mongoose;
-db.url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.gpins.mongodb.net/Kratos?retryWrites=true&w=majority`;
-db.port = process.env.PORT;
+db.url = `mongodb+srv://Ucam2:12345@cluster0.aiphd.mongodb.net/Kratos?retryWrites=true&w=majority`;
+db.port = 3500;
 db.usuario = usuarioModel(mongoose);
 db.adocao = adocaoModel(mongoose);
 db.animal = animalModel(mongoose);

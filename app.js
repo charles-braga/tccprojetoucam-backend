@@ -39,5 +39,5 @@ app.get('/api/', (_, response) => {
 app.use('/api/transaction', transactionRouter);
 
 app.listen(db.port, () => {
-  console.log(`Server working on ${db.port}`);
+  console.log(`Server working on port:${db.port}`);
 });

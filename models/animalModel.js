@@ -1,7 +1,7 @@
 export default (mongoose) => {
   const schemaAnimal = mongoose.Schema({
     idAnimal: {
-      type: number,
+      type: Number,
       required: true,
     },
     tipoAnimal: {
@@ -13,19 +13,19 @@ export default (mongoose) => {
       required: true,
     },
     idadeAnimal: {
-      type: string,
+      type: String,
       required: true,
     },
     porteAnimal: {
-      type: string,
+      type: String,
       required: true,
     },
     racaAnimal: {
-      type: string,
+      type: String,
       required: false,
     },
     temperamentoAnimal: {
-      type: string,
+      type: String,
       required: true,
     },
     vacinasAnimal: {
@@ -33,11 +33,11 @@ export default (mongoose) => {
       required: false,
     },
     fotoAnimal: {
-      type: string,
+      type: String,
       required: true,
     },
     disponibilidade: {
-      type: string,
+      type: String,
       required: true,
     },
   });

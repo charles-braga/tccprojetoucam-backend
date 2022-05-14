@@ -1,19 +1,19 @@
 export default (mongoose) => {
   const schemaAdocao = mongoose.Schema({
     idAnimal: {
-      type: number,
+      type: Number,
       required: true,
     },
     idUsuario: {
-      type: number,
+      type: Number,
       required: true,
     },
     dataAdocao: {
-      type: date,
+      type: Date,
       required: true,
     },
     statusAdocao: {
-      type: string,
+      type: String,
       required: true,
     },
   });

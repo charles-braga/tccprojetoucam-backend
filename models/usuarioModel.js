@@ -5,7 +5,7 @@ export default (mongoose) => {
       required: true,
     },
     senhaUsuario: {
-      type: double,
+      type: String,
       required: true,
     },
     emailUsuario: {
@@ -13,7 +13,7 @@ export default (mongoose) => {
       required: true,
     },
     datanascUsuario: {
-      type: date,
+      type: Date,
       required: true,
     },
     telefoneUsuario: {
