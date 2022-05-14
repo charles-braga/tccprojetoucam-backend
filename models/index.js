@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import TransactionModel from './usuarioModel.js';
+import usuarioModel from './usuarioModel.js';
+import adocaoModel from './adocaoModel.js';
+import animalModel from './animalModel.js';
 
 /**
  * Faz a leitura do arquivo
@@ -12,6 +14,8 @@ const db = {};
 db.mongoose = mongoose;
 db.url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.gpins.mongodb.net/Kratos?retryWrites=true&w=majority`;
 db.port = process.env.PORT;
-db.Transaction = TransactionModel(mongoose);
+db.usuario = usuarioModel(mongoose);
+db.adocao = adocaoModel(mongoose);
+db.animal = animalModel(mongoose);
 
 export { db };

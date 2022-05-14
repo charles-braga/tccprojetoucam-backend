@@ -13,7 +13,7 @@ const create = async (req, res) => {
     }
 
     //prettier-ignore
-    const {description,value,category,yearMonthDay,type} = body;
+    const { description, value, category, yearMonthDay, type } = body;
 
     //Treating the yearMonthDay as array.
     const date = yearMonthDay;
