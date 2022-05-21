@@ -16,7 +16,7 @@ export default (mongoose) => {
       type: String,
       required: true,
     },
-  });
+  }, { collection: "Adocao" });
 
   const adocaoModel = mongoose.model('Adocao', schemaAdocao);
 
