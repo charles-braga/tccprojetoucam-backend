@@ -33,3 +33,24 @@ const create = async (req, res) => {
     });
   }
 };
+
+const findAll = async (req, res) => {
+  try {
+    const adoptions = await Adocao.findAll();
+
+    const mappedAdoptions = adoptions.map((adoption) => adoption.get({ plain: true }));
+    res.send(mappedAdoptions);
+    console.log(mappedAdoptions);
+  } catch (error) {
+    res.status(500).send({
+      message:
+        error.message ||
+        'Erro ao listar os lançamentos para o periodo solicitado.',
+    });
+  }
+};
+
+export default {
+  create,
+  findAll
+};

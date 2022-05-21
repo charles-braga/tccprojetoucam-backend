@@ -3,6 +3,7 @@ import cors from 'cors';
 
 import { db } from './models/index.js';
 import { transactionRouter } from './routes/Router.js';
+import { adoptionRouter } from './routes/adoptionRouter.js';
 
 //Conexão com o MongoDB Atlas.
 (async () => {
@@ -36,7 +37,8 @@ app.get('/api/', (_, response) => {
 /**
  * Rotas principais do app
  */
-app.use('/api/transaction', transactionRouter);
+//app.use('/api/transaction', transactionRouter);
+app.use('/api/adoption', adoptionRouter);
 
 app.listen(db.port, () => {
   console.log(`Server working on port:${db.port}`);
