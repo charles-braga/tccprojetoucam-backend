@@ -30,7 +30,7 @@ app.use(express.json());
 app.get('/api/', (_, response) => {
   response.send({
     message:
-      'Bem-vindo à API de lançamentos. Acesse /transaction e siga as orientações',
+      'Seja bem vindo ao portal Amigo do Pet',
   });
 });
 /**
