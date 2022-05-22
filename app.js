@@ -5,6 +5,8 @@ import { db } from './models/index.js';
 //import { transactionRouter } from './routes/Router.js';
 import { adoptionRouter } from './routes/adoptionRouter.js';
 import { userRouter } from './routes/userRouter.js';
+import { animalRouter } from './routes/animalRouter.js';
+import { donateRouter } from './routes/donateRouter.js';
 
 //Conexão com o MongoDB Atlas.
 (async () => {
@@ -41,7 +43,8 @@ app.get('/api/', (_, response) => {
 //app.use('/api/transaction', transactionRouter);
 app.use('/api/adoption', adoptionRouter);
 app.use('/api/management', userRouter);
-
+app.use('/api/management', animalRouter);
+app.use('/api/management', donateRouter);
 
 app.listen(db.port, () => {
   console.log(`Server working on port:${db.port}`);

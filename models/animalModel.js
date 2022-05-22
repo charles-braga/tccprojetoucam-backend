@@ -1,11 +1,11 @@
 export default (mongoose) => {
   const animalSchema = mongoose.Schema({
     animalType: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     animalGender: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     animalAge: {
@@ -25,7 +25,7 @@ export default (mongoose) => {
       required: true,
     },
     animalVaccines: {
-      type: Boolean,
+      type: Array,
       required: false,
     },
     picture: {
@@ -33,7 +33,7 @@ export default (mongoose) => {
       required: true,
     },
     availability: {
-      type: String,
+      type: Boolean,
       required: true,
     },
   });

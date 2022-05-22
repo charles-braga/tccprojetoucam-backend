@@ -3,6 +3,7 @@ import 'dotenv/config';
 import UserModel from './userModel.js';
 import AdoptionModel from './adoptionModel.js';
 import AnimalModel from './animalModel.js';
+import DonateModel from './donateModel.js';
 
 const db = {};
 db.mongoose = mongoose;
@@ -11,5 +12,6 @@ db.port = 3500;
 db.user = UserModel(mongoose);
 db.adoption = AdoptionModel(mongoose);
 db.animal = AnimalModel(mongoose);
+db.donate = DonateModel(mongoose);
 
 export { db };

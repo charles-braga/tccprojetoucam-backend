@@ -10,7 +10,7 @@ const {
 const userApp = express();
 
 // criando novo cadastro de adoção
-userApp.post('', create);
+userApp.post('/user', create);
 
 // lendo todas as adoções
 //userApp.get('', findAll);
