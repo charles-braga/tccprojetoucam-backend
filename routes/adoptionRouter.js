@@ -1,11 +1,11 @@
 import express from 'express';
-import controller from '../controllers/adoptionController.js';
+import adoptionController from '../controllers/adoptionController.js';
 
 const {
   create,
   findAll
 
-} = controller;
+} = adoptionController;
 // chamando express 
 const adoptionApp = express();
 

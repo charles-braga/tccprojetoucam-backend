@@ -13,7 +13,7 @@ export default (mongoose) => {
       required: true,
     },
     birthDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     contact: {
