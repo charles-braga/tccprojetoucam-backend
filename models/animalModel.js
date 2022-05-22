@@ -1,48 +1,44 @@
 export default (mongoose) => {
-  const schemaAnimal = mongoose.Schema({
-    idAnimal: {
-      type: Number,
-      required: true,
-    },
-    tipoAnimal: {
+  const animalSchema = mongoose.Schema({
+    animalType: {
       type: Boolean,
       required: true,
     },
-    sexoAnimal: {
+    animalGender: {
       type: Boolean,
       required: true,
     },
-    idadeAnimal: {
+    animalAge: {
       type: String,
       required: true,
     },
-    porteAnimal: {
+    animalSize: {
       type: String,
       required: true,
     },
-    racaAnimal: {
+    animalBreed: {
       type: String,
       required: false,
     },
-    temperamentoAnimal: {
+    animalTemperament: {
       type: String,
       required: true,
     },
-    vacinasAnimal: {
+    animalVaccines: {
       type: Boolean,
       required: false,
     },
-    fotoAnimal: {
+    picture: {
       type: String,
       required: true,
     },
-    disponibilidade: {
+    availability: {
       type: String,
       required: true,
     },
   });
 
-  const animalModel = mongoose.model('Animal', schemaAnimal);
+  const AnimalModel = mongoose.model('Animal', animalSchema);
 
-  return animalModel;
+  return AnimalModel;
 };

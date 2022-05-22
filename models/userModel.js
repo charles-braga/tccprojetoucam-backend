@@ -1,36 +1,36 @@
 export default (mongoose) => {
-  const schemaUsuario = mongoose.Schema({
-    nomeUsuario: {
+  const userSchema = mongoose.Schema({
+    name: {
       type: String,
       required: true,
     },
-    senhaUsuario: {
+    password: {
       type: String,
       required: true,
     },
-    emailUsuario: {
+    email: {
       type: String,
       required: true,
     },
-    datanascUsuario: {
+    birthDate: {
       type: Date,
       required: true,
     },
-    telefoneUsuario: {
+    contact: {
       type: String,
       required: true,
     },
-    enderecoUsuario: {
+    address: {
       type: String,
       required: true,
     },
-    tipoUsuario: {
+    userType: {
       type: String,
       required: true,
     },
   });
 
-  const usuarioModel = mongoose.model('Usuario', schemaUsuario);
+  const UserModel = mongoose.model('User', userSchema);
 
-  return usuarioModel;
+  return UserModel;
 };

@@ -1,6 +1,6 @@
 import { db } from '../models/index.js';
 
-const Adocao = db.adocao;
+const Adoption = db.adoption;
 
 const create = async (req, res) => {
   const { body } = req;
@@ -13,23 +13,22 @@ const create = async (req, res) => {
     }
 
     //prettier-ignore
-    const { idAnimal, idUsuario, dataAdocao, statusAdocao } = body;
+    const { animalId, userId, status } = body;
 
-    const adocao = new Adocao({
-      idAnimal,
-      idUsuario,
-      dataAdocao,
-      statusAdocao,
+    const adoption = new Adoption({
+      animalId,
+      userId,
+      status,
     });
 
-    console.log(adocao);
+    console.log(adoption);
 
-    await adocao.save(adocao);
+    await adoption.save(adoption);
 
-    res.send({ message: 'Novo lançamento salvo com sucesso!' });
+    res.send({ message: 'Adoção realizada com sucesso!' });
   } catch (error) {
     res.status(500).send({
-      message: error.message || 'Erro ao salvar o novo lançamento.',
+      message: error.message || 'Erro ao salvar a adoção.',
     });
   }
 };
@@ -45,7 +44,7 @@ const findAll = async (req, res) => {
     res.status(500).send({
       message:
         error.message ||
-        'Erro ao listar os lançamentos para o periodo solicitado.',
+        'Erro!.',
     });
   }
 };
