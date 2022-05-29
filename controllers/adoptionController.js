@@ -43,17 +43,28 @@ const create = async (req, res) => {
 };
 
 const findAll = async (req, res) => {
-  try {
-    const adoptions = await Adocao.findAll();
+  const { period } = req.query;
 
-    const mappedAdoptions = adoptions.map((adoption) => adoption.get({ plain: true }));
-    res.send(mappedAdoptions);
-    console.log(mappedAdoptions);
+  var conditionPeriod = period
+    ? { yearMonth: { $regex: new RegExp(period), $options: 'i' } }
+    : {};
+
+  try {
+    if (period === "" || period === undefined) {
+      throw new Error('É necessário informar o parâmetro "?period", cujo valor deve estar no formato yyyy-mm');
+    }
+
+    const queryAdoptions = await Adoption.find(conditionPeriod);
+
+    queryAdoptions.sort((a, b) => { return a.day - b.day });
+
+    res.send(queryAdoptions);
+
   } catch (error) {
     res.status(500).send({
       message:
         error.message ||
-        'Erro!.',
+        'Erro ao listar os lançamentos para o periodo solicitado.',
     });
   }
 };
