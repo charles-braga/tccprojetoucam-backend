@@ -9,10 +9,13 @@ export default (mongoose) => {
       type: mongoose.Types.ObjectId,
       required: true,
     },
-    adoptionDate: {
-      type: Date,
-      default: Date.now,
-      required: false,
+    year: Number,
+    month: Number,
+    day: Number,
+    yearMonth: String,
+    yearMonthDay: {
+      type: String,
+      required: true,
     },
     status: {
       type: String,

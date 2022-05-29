@@ -39,9 +39,13 @@ const create = async (req, res) => {
   }
 };
 
+//função FIND
+const find = async (req, res) => {
+
+};
 
 
 export default {
   create,
-  //findAll
+  find
 };

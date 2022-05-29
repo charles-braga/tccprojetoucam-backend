@@ -1,5 +1,8 @@
 export default (mongoose) => {
   const animalSchema = mongoose.Schema({
+    id: {
+      type: mongoose.Types.ObjectId,
+    },
     animalType: {
       type: String,
       required: true,

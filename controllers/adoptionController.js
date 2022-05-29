@@ -13,12 +13,21 @@ const create = async (req, res) => {
     }
 
     //prettier-ignore
-    const { animalId, userId, status } = body;
+    const { animalId, userId, status, yearMonthDay } = body;
+
+    const date = yearMonthDay;
+    const resultDate = date.split("/", 3);
+    const [ano, mes, dia] = resultDate;
 
     const adoption = new Adoption({
       animalId,
       userId,
       status,
+      year: ano,
+      month: mes,
+      day: dia,
+      yearMonth: `${ano}/${mes}`,
+      yearMonthDay,
     });
 
     console.log(adoption);
