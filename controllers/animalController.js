@@ -40,7 +40,7 @@ const createAnimal = async (req, res) => {
 };
 
 //função FIND
-const findAllAnimals = async (req, res) => {
+const findAllAnimals = async (_, res) => {
   try {
     const queryAnimals = await Animal.find({});
 
