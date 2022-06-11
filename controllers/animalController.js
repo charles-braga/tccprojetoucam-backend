@@ -2,7 +2,7 @@ import { db } from '../models/index.js';
 
 const Animal = db.animal;
 
-const create = async (req, res) => {
+const createAnimal = async (req, res) => {
   const { body } = req;
 
   console.log(body);
@@ -40,12 +40,23 @@ const create = async (req, res) => {
 };
 
 //função FIND
-const find = async (req, res) => {
+const findAllAnimals = async (req, res) => {
+  try {
+    const queryAnimals = await Animal.find({});
 
+    res.send(queryAnimals);
+
+  } catch (error) {
+    res.status(500).send({
+      message:
+        error.message ||
+        'Erro ao listar os animais cadastrados.',
+    });
+  }
 };
 
 
 export default {
-  create,
-  find
+  createAnimal,
+  findAllAnimals
 };
