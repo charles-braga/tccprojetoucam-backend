@@ -3,16 +3,25 @@ import userController from '../controllers/userController.js';
 
 const {
   create,
-  //findAll
-
+  updateUser,
+  FindAllUsers,
+  deleteUser
 } = userController;
+
 // chamando express 
 const userApp = express();
 
 // criando novo cadastro de adoção
 userApp.post('/user', create);
 
-// lendo todas as adoções
-//userApp.get('', findAll);
+//PATCH atualizando lançamento por id.
+userApp.patch('/user/:_id', updateUser);
+
+//Carregando usuários cadastrados.
+userApp.get('/user', FindAllUsers);
+
+//Deletando usuários cadastrados.
+userApp.delete('/user/:_id', deleteUser);
+
 
 export { userApp as userRouter };

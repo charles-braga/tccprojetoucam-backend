@@ -13,7 +13,7 @@ const create = async (req, res) => {
     }
 
     //prettier-ignore
-    const { animalId, userId, status, yearMonthDay } = body;
+    const { animalId, animalName, userId, userName, status, yearMonthDay } = body;
 
     const date = yearMonthDay;
     const resultDate = date.split("/", 3);
@@ -21,7 +21,9 @@ const create = async (req, res) => {
 
     const adoption = new Adoption({
       animalId,
+      animalName,
       userId,
+      userName,
       status,
       year: ano,
       month: mes,
@@ -69,7 +71,11 @@ const findAll = async (req, res) => {
   }
 };
 
+
+
 export default {
   create,
-  findAll
+  findAll,
+
+  //deleteUser
 };
