@@ -1,12 +1,12 @@
 
 export default (mongoose) => {
   const adoptionSchema = mongoose.Schema({
-    animalId: {
-      type: mongoose.Types.ObjectId,
+    animalName: {
+      type: String,
       required: true,
     },
-    userId: {
-      type: mongoose.Types.ObjectId,
+    userName: {
+      type: String,
       required: true,
     },
     year: Number,
