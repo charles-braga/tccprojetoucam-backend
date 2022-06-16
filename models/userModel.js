@@ -26,7 +26,6 @@ export default (mongoose) => {
     },
     userType: {
       type: String,
-      required: true,
     },
   });
 
