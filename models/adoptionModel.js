@@ -1,7 +1,7 @@
 
 export default (mongoose) => {
   const adoptionSchema = mongoose.Schema({
-    animalName: {
+    animalID: {
       type: String,
       required: true,
     },
@@ -19,7 +19,7 @@ export default (mongoose) => {
     },
     status: {
       type: String,
-      required: true,
+      required: false,
     },
   });
 

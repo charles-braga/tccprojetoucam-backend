@@ -5,7 +5,7 @@ const Animal = db.animal;
 const createAnimal = async (req, res) => {
   const { body } = req;
 
-  console.log(body);
+  //console.log(body);
 
   try {
     if (JSON.stringify(body) === '{}') {
@@ -13,10 +13,11 @@ const createAnimal = async (req, res) => {
     }
 
     //prettier-ignore
-    const { animalName, animalType, animalGender, animalAge, animalSize, animalBreed, animalTemperament, animalVaccines, picture, availability } = body;
+    const { animalName, animalDescription, animalType, animalGender, animalAge, animalSize, animalBreed, animalTemperament, animalVaccines, picture, availability } = body;
 
     const animal = new Animal({
       animalName,
+      animalDescription,
       animalType,
       animalGender,
       animalAge,
@@ -28,7 +29,7 @@ const createAnimal = async (req, res) => {
       availability
     });
 
-    console.log(animal);
+    //console.log(animal);
 
     await animal.save(animal);
 

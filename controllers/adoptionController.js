@@ -5,24 +5,21 @@ const Adoption = db.adoption;
 const create = async (req, res) => {
   const { body } = req;
 
-  console.log(body);
-
   try {
     if (JSON.stringify(body) === '{}') {
       throw new Error('Conteúdo inexistente');
     }
 
     //prettier-ignore
-    const { animalName, userName, status, yearMonthDay } = body;
+    const { animalID, userName, yearMonthDay } = body;
 
     const date = yearMonthDay;
     const resultDate = date.split("/", 3);
     const [ano, mes, dia] = resultDate;
 
     const adoption = new Adoption({
-      animalName,
+      animalID,
       userName,
-      status,
       year: ano,
       month: mes,
       day: dia,
@@ -30,7 +27,7 @@ const create = async (req, res) => {
       yearMonthDay,
     });
 
-    console.log(adoption);
+    //console.log(adoption);
 
     await adoption.save(adoption);
 
