@@ -13,9 +13,10 @@ const createAnimal = async (req, res) => {
     }
 
     //prettier-ignore
-    const { animalType, animalGender, animalAge, animalSize, animalBreed, animalTemperament, animalVaccines, picture, availability } = body;
+    const { animalName, animalType, animalGender, animalAge, animalSize, animalBreed, animalTemperament, animalVaccines, picture, availability } = body;
 
     const animal = new Animal({
+      animalName,
       animalType,
       animalGender,
       animalAge,
