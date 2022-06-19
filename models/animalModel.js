@@ -13,8 +13,8 @@ export default (mongoose) => {
       required: true,
     },
     animalAge: {
-      type: String,
-      required: true,
+      type: Number,
+      required: false,
     },
     animalSize: {
       type: String,
@@ -32,13 +32,17 @@ export default (mongoose) => {
       type: Array,
       required: false,
     },
+    animalDescription: {
+      type: String,
+      required: true
+    },
     picture: {
       type: String,
-      required: true,
+      required: false,
     },
     availability: {
       type: Boolean,
-      required: true,
+      required: false,
     },
   });
 
