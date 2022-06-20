@@ -26,7 +26,7 @@ const app = express();
 app.use(express.json());
 
 //Cors conectando com o frontend.
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://tccprojetoucam-frontend-ash579uu1-charles-braga.vercel.app' }));
 
 /**
  * Rota raiz
