@@ -26,11 +26,27 @@ const app = express();
 app.use(express.json());
 
 //Cors conectando com o frontend.
-app.use(cors({ "origin": "*", "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", "preflightContinue": false, "optionsSuccessStatus": 204 }));
+//app.use(cors({ "origin": "*", "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", "preflightContinue": false, "optionsSuccessStatus": 204 }));
+
+app.use(function(req, res, next) { //allow cross origin requests
+  
+res.setHeader("Access-Control-Allow-Origin",
+"*");
+
+res.header("Access-Control-Allow-Methods", "POST, PATCH, DELETE, GET");
+
+res.header("Access-Control-Max-Age", "3600");
+  
+res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+  
+next();
+
+}); 
 
 /**
  * Rota raiz
  */
+
 app.get('/api/', (_, response) => {
   response.send({
     message:
