@@ -26,7 +26,7 @@ const app = express();
 app.use(express.json());
 
 //Cors conectando com o frontend.
-app.use(cors({ origin: '*' }));
+app.use(cors({ "origin": "*", "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", "preflightContinue": false, "optionsSuccessStatus": 204 }));
 
 /**
  * Rota raiz
