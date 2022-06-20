@@ -26,7 +26,7 @@ const app = express();
 app.use(express.json());
 
 //Cors conectando com o frontend.
-app.use(cors({ 'Access-Control-Allow-Origin', 'https://tccprojetoucam-frontend.vercel.app' }));
+app.use(cors({ origin: '*' }));
 
 /**
  * Rota raiz
