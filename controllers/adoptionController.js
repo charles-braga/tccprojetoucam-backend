@@ -14,7 +14,7 @@ const create = async (req, res) => {
     const { animalID, userName, yearMonthDay } = body;
 
     const date = yearMonthDay;
-    const resultDate = date.split("/", 3);
+    const resultDate = date.split("-", 3);
     const [ano, mes, dia] = resultDate;
 
     const adoption = new Adoption({
