@@ -31,7 +31,7 @@ const app = express();
 app.use(express.json());
 
 //Cors conectando com o frontend.
-app.use(cors({ origin: "http:/localhost:3000" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 
 /**
  * Rota raiz
